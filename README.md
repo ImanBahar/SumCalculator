@@ -12,7 +12,7 @@ This solutions will take a string input and return the calculations.
 
 The operations priority will be as follows:
 
-1. multiplication and divisions
+1. multiplication and divisions (if it doesnt effect the one with the brackets)
 2. brackets
 3. addition and subtractions
 
