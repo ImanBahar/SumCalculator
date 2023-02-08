@@ -127,44 +127,12 @@ namespace MyApp // Note: actual namespace depends on the project name.
                     calc = calc.Replace(match, xy.ToString());
                 }
 
+                // if there's still "*" and "/" will reloop
                 if(Regex.IsMatch(calc, priority_Ops))
                     return SumCalculator(calc);
-
-                //Console.WriteLine("New Calculation : " + calc + "\n");
-
-                //    string resultX = match.ToString();
-
-                //    var askl = Regex.Matches(resultX, ops_type);
-                //    var num_lists = Regex.Matches(resultX, number_double);
-
-                //    List<double> doubleArray = new List<double>();
-                //    double resultCalc = 0;
-
-                //    foreach (Match m in num_lists)
-                //    {
-                //        if (m.Value != "")
-                //        {
-                //            doubleArray.Add(Double.Parse(m.Value));
-                //        }
-                //    }
-
-                //    for (int x = 0; x < doubleArray.Count(); x++)
-                //    {
-                //        if (x != 0)
-                //        {
-                //            resultCalc = calculate(doubleArray[x - 1], doubleArray[x], askl[0].Value);
-                //            Console.WriteLine("Array Calculation : " + resultCalc);
-                //        }
-                //    }
-
-                //    calc = calc.Replace(resultX, resultCalc.ToString());
-                //    Console.WriteLine(calc);
-
-                //    if (rex.IsMatch(calc))
-                //        SumCalculator(calc);
             }
 
-            // proceed with "()"
+            // proceed with "+" and "-"
             string[] operationsX = Regex.Matches(calc, ops_type).Cast<Match>().Select(m => m.Value).ToArray();
             List<string> numberDataX = Regex.Matches(calc, number_double).Cast<Match>().Select(m => m.Value).ToList();
             List<double> tmpListX = new();
@@ -190,8 +158,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
             {
                 calc = calc.Replace(calc, xy.ToString());
             }
-
-            //Console.WriteLine("Calculation Results : " + calc + "\n");
 
             return Double.Parse(calc);
         }
