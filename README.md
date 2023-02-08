@@ -4,7 +4,7 @@ Start Time (07/02/2023) @ 8.30 pm
 
 End Time (08/02/2023) @ 10.20 am  
 
-Approximately 5 to 6 hours.
+Approximately 4 to 5 hours.
 
 String to double calculations using regular expression to filter
 
